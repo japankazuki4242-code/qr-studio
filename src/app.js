@@ -70,7 +70,8 @@ $('image').addEventListener('change', async () => {
     objectUrl = URL.createObjectURL(file);
     const image = new Image();
     image.src = objectUrl;
-    await image.decode();
+    try { await image.decode(); }
+    catch { throw new Error('画像を読み込めませんでした。別の画像を選ぶか、PNG・JPEGで保存し直してください。'); }
     if (request !== imageRequest) return;
     if (image.naturalWidth * image.naturalHeight > 24_000_000) throw new Error('画像の画素数が大きすぎます。2,400万画素以下に縮小してください。');
     const thumbnail = document.createElement('canvas');

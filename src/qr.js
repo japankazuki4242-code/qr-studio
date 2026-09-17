@@ -5,7 +5,8 @@ export function normalizeUrl(input) {
   const value = input.trim();
   if (!value) throw new Error('WebサイトのURLを入力してください。');
   if (/\s/.test(value)) throw new Error('URLに空白や改行を含めることはできません。');
-  if (/^[a-z][a-z\d+.-]*:/i.test(value) && !/^https?:\/\//i.test(value)) {
+  const hasHostPort = /^(?:[^/?#:]+|\[[\da-f:]+\]):\d+(?:[/?#]|$)/i.test(value);
+  if (!hasHostPort && /^[a-z][a-z\d+.-]*:/i.test(value) && !/^https?:\/\//i.test(value)) {
     throw new Error('http:// または https:// のURLを入力してください。');
   }
   let url;

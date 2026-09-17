@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { normalizeUrl, contrastOnWhite, createPixels, decodePixels } from '../src/qr.js';
 
 test('HTTP URLs, IDNs, query strings and fragments round-trip', () => {
-  for (const input of ['example.com', 'https://example.com/?a=1&b=2#hello', 'http://example.org/path', 'https://日本語.jp/こんにちは']) {
+  for (const input of ['example.com', 'example.com:8080/path', 'localhost:3000', 'https://example.com/?a=1&b=2#hello', 'http://example.org/path', 'https://日本語.jp/こんにちは']) {
     const url = normalizeUrl(input);
     const { data, size } = createPixels(url, 512, '#111111');
     assert.equal(decodePixels(data, size, size), url);
