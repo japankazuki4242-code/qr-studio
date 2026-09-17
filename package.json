@@ -1,0 +1,13 @@
+{
+  "name": "qr-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/app.js --bundle --minify --legal-comments=linked --outfile=dist/app.js",
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test"
+  },
+  "dependencies": { "jsqr": "1.4.0", "qrcode": "1.5.4" },
+  "devDependencies": { "esbuild": "0.25.12" }
+}
