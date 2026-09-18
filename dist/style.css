@@ -3,3 +3,6 @@
 
 h1{text-wrap:balance}h2{scroll-margin-top:24px}.workspace>*{min-width:0}body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 @media(max-width:700px){.export-actions button{font-size:14px;padding-inline:10px;gap:8px;white-space:nowrap}}
+
+footer{flex-wrap:wrap}.footer-links{display:flex;flex-wrap:wrap;gap:4px 20px;margin-left:auto;min-width:0}.footer-links a{min-height:44px;margin-left:0}
+.terms-page{max-width:864px;padding-top:40px;padding-bottom:16px;overflow-wrap:anywhere}.terms-page h1{margin-bottom:28px}.terms-page section{padding:24px 0;border-bottom:1px solid var(--line)}.terms-page h2{display:block;font-size:20px;margin:0 0 14px}.terms-page p,.terms-page li{line-height:1.9}.terms-page p{margin:12px 0}.terms-page ul{padding-left:24px}.terms-page li+li{margin-top:8px}.terms-page .terms-links{list-style:none;padding:0}.terms-links a{display:flex;align-items:center;min-height:44px;padding:8px 0;color:var(--orange)}
